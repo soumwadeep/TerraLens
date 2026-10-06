@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -31,6 +32,9 @@ export function Dialog({
   dismissible = true,
 }: DialogProps) {
   const panelRef = React.useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => setMounted(true), []);
 
   React.useEffect(() => {
     if (!open) return;
@@ -40,16 +44,21 @@ export function Dialog({
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    panelRef.current?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
     };
   }, [open, dismissible, onOpenChange]);
 
-  if (!open) return null;
+  // Portal to body: ancestors keep a finished transform from animate-fade-up,
+  // which would otherwise become this fixed overlay's containing block.
+  React.useEffect(() => {
+    if (open) panelRef.current?.focus();
+  }, [open, mounted]);
 
-  return (
+  if (!open || !mounted) return null;
+
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-end justify-center sm:items-center"
       role="dialog"
@@ -96,6 +105,7 @@ export function Dialog({
           <div className="mt-5 flex flex-col gap-2 sm:flex-row-reverse">{footer}</div>
         ) : null}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
