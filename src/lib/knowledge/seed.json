@@ -1,0 +1,451 @@
+{
+  "version": "2026.10",
+  "note": "Bundled field guide for TerraLens. General temperate-region naturalist knowledge; not an identification authority. Server-side Tiger Data can extend this set.",
+  "entries": [
+    {
+      "slug": "common-oak",
+      "commonName": "Common oak",
+      "scientificName": "Quercus robur",
+      "category": "tree",
+      "traits": ["lobed leaves", "acorns", "gnarled bark", "long-lived"],
+      "habitat": "Parkland, hedgerows, old woodland across temperate Europe.",
+      "ecology": "Oaks can live for centuries and support hundreds of insect species; jays bury acorns and often plant the next generation of oaks by forgetting a few.",
+      "seasonality": ["spring catkins", "summer canopy", "autumn acorns"],
+      "safeFacts": [
+        "Acorns are not edible raw for people.",
+        "Oak processionary moth caterpillars have irritating hairs — look, don't touch."
+      ],
+      "region": "Temperate Europe"
+    },
+    {
+      "slug": "silver-birch",
+      "commonName": "Silver birch",
+      "scientificName": "Betula pendula",
+      "category": "tree",
+      "traits": ["white peeling bark", "drooping branches", "small toothed leaves"],
+      "habitat": "Heathland, woodland edges and open ground; a pioneer tree on bare soil.",
+      "ecology": "One of the first trees to colonise cleared ground. Its light seeds travel far on the wind, and its bark peels in papery horizontal strips.",
+      "seasonality": ["spring catkins", "autumn gold leaves", "winter silhouette"],
+      "safeFacts": ["Birch pollen is a common allergen in spring."],
+      "region": "Temperate Europe and Asia"
+    },
+    {
+      "slug": "goat-willow",
+      "commonName": "Goat willow",
+      "scientificName": "Salix caprea",
+      "category": "tree",
+      "traits": ["pussy willow catkins", "broad oval leaves", "wet ground"],
+      "habitat": "Damp woodland, ditches and lakesides.",
+      "ecology": "Its early catkins are one of the first big pollen sources for bees waking from winter. Willows root readily from broken branches.",
+      "seasonality": ["late-winter catkins", "early spring pollen"],
+      "safeFacts": [
+        "Willow bark contains salicin, a relative of aspirin — do not self-medicate from wild trees."
+      ],
+      "region": "Europe and western Asia"
+    },
+    {
+      "slug": "hawthorn",
+      "commonName": "Hawthorn",
+      "scientificName": "Crataegus monogyna",
+      "category": "tree",
+      "traits": ["thorny branches", "white blossom", "red haws", "hedgerow shrub"],
+      "habitat": "Hedgerows, scrub and field edges — the classic hedge plant.",
+      "ecology": "Blossom feeds insects in May and the autumn haws feed thrushes and redwings through winter. Old hawthorns often host lichens and nesting birds.",
+      "seasonality": ["May blossom", "autumn haws"],
+      "safeFacts": ["The thorns are sharp enough to scratch — long sleeves help in tight hedges."],
+      "region": "Europe"
+    },
+    {
+      "slug": "horse-chestnut",
+      "commonName": "Horse chestnut",
+      "scientificName": "Aesculus hippocastanum",
+      "category": "tree",
+      "traits": ["palmate leaves", "conkers", "candle-like flowers"],
+      "habitat": "Parks, avenues and large gardens.",
+      "ecology": "Introduced from the Balkans but planted widely. Its 'candles' of flowers appear in May, followed by conkers in spiky cases each autumn.",
+      "seasonality": ["May flowers", "autumn conkers", "early leaf fall"],
+      "safeFacts": ["Conkers are mildly toxic — not for eating."],
+      "region": "Planted across temperate regions"
+    },
+    {
+      "slug": "european-robin",
+      "commonName": "European robin",
+      "scientificName": "Erithacus rubecula",
+      "category": "bird",
+      "traits": ["orange-red breast", "round body", "confiding", "melodic song"],
+      "habitat": "Gardens, hedgerows and woodland undergrowth.",
+      "ecology": "Robins follow digging animals and gardeners to snap up exposed worms — the origin of their famously bold behaviour. Both sexes look alike and hold winter territories with song.",
+      "seasonality": ["sings year-round", "nests spring to summer"],
+      "safeFacts": [],
+      "region": "Europe"
+    },
+    {
+      "slug": "blue-tit",
+      "commonName": "Blue tit",
+      "scientificName": "Cyanistes caeruleus",
+      "category": "bird",
+      "traits": ["blue cap and wings", "yellow belly", "acrobatic", "feeder visitor"],
+      "habitat": "Woodland, gardens and parks; nests in tree holes and nest boxes.",
+      "ecology": "Famous for pecking the foil tops off milk bottles for cream — a learned habit spread between birds. A single brood can eat thousands of caterpillars.",
+      "seasonality": ["spring nesting", "winter flocks at feeders"],
+      "safeFacts": [],
+      "region": "Europe"
+    },
+    {
+      "slug": "eurasian-wren",
+      "commonName": "Eurasian wren",
+      "scientificName": "Troglodytes troglodytes",
+      "category": "bird",
+      "traits": ["tiny", "cocked tail", "loud song", "streaky brown"],
+      "habitat": "Dense undergrowth, log piles, stone walls, gardens.",
+      "ecology": "Gram for gram one of the loudest singers in Europe. In cold snaps wrens roost together in huddles to share warmth.",
+      "seasonality": ["sings all year", "hard winters hit numbers"],
+      "safeFacts": [],
+      "region": "Europe and North America (as winter wren group)"
+    },
+    {
+      "slug": "mallard",
+      "commonName": "Mallard",
+      "scientificName": "Anas platyrhynchos",
+      "category": "bird",
+      "traits": ["iridescent green head (male)", "orange feet", "up-ending dabbler"],
+      "habitat": "Ponds, rivers, canals — almost any water in town or country.",
+      "ecology": "During summer moult males go dull brown and briefly cannot fly. Ducklings leave the nest within a day and can swim almost immediately.",
+      "seasonality": ["spring ducklings", "summer moult", "winter gatherings"],
+      "safeFacts": ["Bread harms waterfowl — offer oats, seeds or leave them be."],
+      "region": "Northern hemisphere (widely introduced elsewhere)"
+    },
+    {
+      "slug": "carrion-crow",
+      "commonName": "Carrion crow",
+      "scientificName": "Corvus corone",
+      "category": "bird",
+      "traits": ["all black", "square tail", "solitary", "calls 'caw'"],
+      "habitat": "Fields, coasts, parks and city rooftops.",
+      "ecology": "Crows solve puzzles and even use sticks as tools in experiments. They cache food and remember who was watching when they hid it.",
+      "seasonality": ["year-round", "nests early spring"],
+      "safeFacts": [],
+      "region": "Western Europe and eastern Asia"
+    },
+    {
+      "slug": "eurasian-magpie",
+      "commonName": "Eurasian magpie",
+      "scientificName": "Pica pica",
+      "category": "bird",
+      "traits": ["black and white plumage", "long tail", "metallic sheen"],
+      "habitat": "Farmland, towns, parks and scrub.",
+      "ecology": "One of the few non-mammals to pass the mirror test — magpies react to a mark they only see in a reflection. Their domed nests with side entrances are unlike most open bird nests.",
+      "seasonality": ["year-round", "early spring nesting"],
+      "safeFacts": [],
+      "region": "Europe and Asia"
+    },
+    {
+      "slug": "common-kestrel",
+      "commonName": "Common kestrel",
+      "scientificName": "Falco tinnunculus",
+      "category": "bird",
+      "traits": ["hovering flight", "pointed wings", "rusty back (male)", "voles"],
+      "habitat": "Rough grassland, motorway verges, church towers and cliffs.",
+      "ecology": "Kestrels hover into the wind scanning for voles, dropping in a controlled dive. They can see ultraviolet, which helps them follow vole urine trails.",
+      "seasonality": ["year-round", "spring display flights"],
+      "safeFacts": [],
+      "region": "Europe, Asia and Africa"
+    },
+    {
+      "slug": "common-swift",
+      "commonName": "Common swift",
+      "scientificName": "Apus apus",
+      "category": "bird",
+      "traits": ["sickle wings", "all-dark", "screaming calls", "never lands"],
+      "habitat": "Gaps under roof tiles and in old walls; hawks insects high over towns.",
+      "ecology": "After fledging, a young swift may stay airborne for almost ten months — eating, sleeping and even mating in flight. They arrive in May and leave in August.",
+      "seasonality": ["May to August", "screaming party flights on warm evenings"],
+      "safeFacts": [
+        "A grounded swift needs urgent specialist help — it cannot take off from the ground."
+      ],
+      "region": "Europe, wintering in Africa"
+    },
+    {
+      "slug": "common-wood-pigeon",
+      "commonName": "Common wood pigeon",
+      "scientificName": "Columba palumbus",
+      "category": "bird",
+      "traits": ["white neck patch", "white wing bars", "soft coo", "bulky"],
+      "habitat": "Woodland, farmland, parks and gardens.",
+      "ecology": "Wood pigeons can swallow surprising-sized acorns and berries whole. Their lazy 'coo-COO-coo, coo' rhythm is one of the most recognisable sounds of a British summer.",
+      "seasonality": ["year-round", "breeds March to September"],
+      "safeFacts": [],
+      "region": "Europe"
+    },
+    {
+      "slug": "great-spotted-woodpecker",
+      "commonName": "Great spotted woodpecker",
+      "scientificName": "Dendrocopos major",
+      "category": "bird",
+      "traits": ["black and white", "red undertail", "drumming", "tree trunks"],
+      "habitat": "Broadleaf and mixed woodland, parks with mature trees.",
+      "ecology": "Drumming is a territorial signal, not feeding — the bird strikes a resonant dead branch with rapid beats. Its tongue wraps around the skull under the skin, cushioning the impacts.",
+      "seasonality": ["drums January to April", "visits feeders for peanuts in winter"],
+      "safeFacts": [],
+      "region": "Europe and northern Asia"
+    },
+    {
+      "slug": "dandelion",
+      "commonName": "Dandelion",
+      "scientificName": "Taraxacum officinale agg.",
+      "category": "flower",
+      "traits": ["yellow compound flower", "toothed leaves", "clock of seeds", "milky sap"],
+      "habitat": "Lawns, verges, cracks in pavement — almost anywhere.",
+      "ecology": "Each 'petal' is a complete tiny flower, and the seed clock is a precise parachute. Dandelions flower over a long season, feeding pollinators when little else is out.",
+      "seasonality": ["March to October", "peaks spring"],
+      "safeFacts": [
+        "Edible in salads only when picked from clean ground away from dogs and spraying."
+      ],
+      "region": "Widespread"
+    },
+    {
+      "slug": "foxglove",
+      "commonName": "Foxglove",
+      "scientificName": "Digitalis purpurea",
+      "category": "flower",
+      "traits": ["tall purple spikes", "thimble flowers", "woodland clearing"],
+      "habitat": "Woodland clearings, hedgebanks and acidic soils.",
+      "ecology": "Foxgloves are biennial: a rosette one year, a towering flower spike the next. The spotted inner petals are landing lights for bumblebees, which are the only insects strong enough to push inside.",
+      "seasonality": ["June to August"],
+      "safeFacts": [
+        "All parts of foxglove are toxic — admire, don't pick or ingest, and wash hands after touching."
+      ],
+      "region": "Western Europe"
+    },
+    {
+      "slug": "red-clover",
+      "commonName": "Red clover",
+      "scientificName": "Trifolium pratense",
+      "category": "flower",
+      "traits": ["pink-red globe flowers", "three leaves", "meadows"],
+      "habitat": "Meadows, verges and clover leys.",
+      "ecology": "Clovers fix nitrogen with root bacteria, enriching the soil around them. Bumblebees with long tongues are their main pollinators.",
+      "seasonality": ["May to October"],
+      "safeFacts": [],
+      "region": "Europe and Asia"
+    },
+    {
+      "slug": "stinging-nettle",
+      "commonName": "Stinging nettle",
+      "scientificName": "Urtica dioica",
+      "category": "plant",
+      "traits": ["serrated leaves", "hollow stinging hairs", "damp rich soil"],
+      "habitat": "Waste ground, hedgerows, riverbanks — soils rich in nutrients.",
+      "ecology": "The nettle's stinging hairs are tiny glass-like tubes that snap and inject irritants. Red admiral and peacock butterflies lay eggs on nettles, making them vital caterpillar food.",
+      "seasonality": ["spring growth", "seeds in late summer"],
+      "safeFacts": [
+        "Stings sting — cooling water helps; dock leaves are tradition rather than true remedy."
+      ],
+      "region": "Europe, Asia, North America"
+    },
+    {
+      "slug": "bramble",
+      "commonName": "Bramble",
+      "scientificName": "Rubus fruticosus agg.",
+      "category": "plant",
+      "traits": ["thorny arching stems", "white-pink flowers", "blackberries"],
+      "habitat": "Hedgerows, scrub, woodland edges.",
+      "ecology": "Brambles root wherever their arching tips touch soil, forming impenetrable thickets that shelter birds and small mammals. The blackberries are vital autumn food.",
+      "seasonality": ["summer flowers", "August to October blackberries"],
+      "safeFacts": [
+        "Pick berries above dog height and wash before eating; thorns scratch — check for ticks afterwards."
+      ],
+      "region": "Europe"
+    },
+    {
+      "slug": "common-ivy",
+      "commonName": "Common ivy",
+      "scientificName": "Hedera helix",
+      "category": "plant",
+      "traits": ["evergreen", "climbing or creeping", "late flowers", "black berries"],
+      "habitat": "Tree trunks, walls, hedgebanks and shade.",
+      "ecology": "Ivy is not a parasite — it climbs with rootlets and only uses trees for support. Its late-autumn flowers are a lifeline for bees and hoverflies, and the spring berries feed thrushes.",
+      "seasonality": ["flowers September to November", "berries in spring"],
+      "safeFacts": ["Berries are toxic to people — leave them for the birds."],
+      "region": "Europe"
+    },
+    {
+      "slug": "ribwort-plantain",
+      "commonName": "Ribwort plantain",
+      "scientificName": "Plantago lanceolata",
+      "category": "plant",
+      "traits": ["ribbed lance leaves", "rat-tail flower heads", "trampled ground"],
+      "habitat": "Lawns, paths and pasture — thrives where feet and mowers press down.",
+      "ecology": "Its rosette grows flat, surviving being walked on. The seed heads rattle with the wind and are nicknamed 'fighting cocks' for a children's game of knocking heads off.",
+      "seasonality": ["April to October"],
+      "safeFacts": [],
+      "region": "Europe and Asia"
+    },
+    {
+      "slug": "buff-tailed-bumblebee",
+      "commonName": "Buff-tailed bumblebee",
+      "scientificName": "Bombus terrestris",
+      "category": "insect",
+      "traits": ["buff and black bands", "white tail (queen)", "loud buzz", "nests in ground"],
+      "habitat": "Gardens, meadows and farmland; nests in old mouse holes or under sheds.",
+      "ecology": "Workers have a buff tail; only queens have the buff tail edged in white. They 'buzz-pollinate' tomatoes and blueberries by vibrating flowers to shake out pollen.",
+      "seasonality": ["queens emerge February", "colony fades by autumn"],
+      "safeFacts": ["Bumblebees are gentle and rarely sting — stay still and let them pass."],
+      "region": "Europe and adjacent regions"
+    },
+    {
+      "slug": "seven-spot-ladybird",
+      "commonName": "Seven-spot ladybird",
+      "scientificName": "Coccinella septempunctata",
+      "category": "insect",
+      "traits": ["red with seven black spots", "dome shape", "aphid eater"],
+      "habitat": "Gardens, fields and hedgerows wherever aphids gather.",
+      "ecology": "One ladybird larva can eat hundreds of aphids before pupating. The bright red is a warning: they can bleed bitter fluid from their leg joints when threatened.",
+      "seasonality": ["spring to autumn", "overwinters in sheltered spots"],
+      "safeFacts": [],
+      "region": "Europe and Asia (introduced to North America)"
+    },
+    {
+      "slug": "common-darter",
+      "commonName": "Common darter",
+      "scientificName": "Sympetrum striolatum",
+      "category": "insect",
+      "traits": ["red-orange abdomen", "perches on fences", "fast darting flight"],
+      "habitat": "Ponds, ditches and still water; often perches on warm wood.",
+      "ecology": "Dragonfly young live underwater as ferocious nymphs for a year or more before climbing out to split their skins and fly. Adults hunt midges and flies on warm afternoons.",
+      "seasonality": ["June to October", "one of the last dragonflies flying into autumn"],
+      "safeFacts": [],
+      "region": "Europe and Asia"
+    },
+    {
+      "slug": "peacock-butterfly",
+      "commonName": "Peacock butterfly",
+      "scientificName": "Aglais io",
+      "category": "insect",
+      "traits": ["eyespots on wings", "dark red base", "overwinters indoors"],
+      "habitat": "Gardens, nettle patches and buddleia bushes.",
+      "ecology": "When disturbed, a peacock can hiss by rubbing its wings and flash four eyespots to startle birds. Adults hibernate with wings closed looking like dead leaves.",
+      "seasonality": ["emerges March", "new generation August", "hibernates as adult"],
+      "safeFacts": [],
+      "region": "Europe and temperate Asia"
+    },
+    {
+      "slug": "fly-agaric",
+      "commonName": "Fly agaric",
+      "scientificName": "Amanita muscaria",
+      "category": "fungus",
+      "traits": ["red cap with white spots", "white gills", "birch and pine woods"],
+      "habitat": "Under birch, pine and spruce, often in rings.",
+      "ecology": "The classic storybook toadstool. It partners with tree roots: the fungus trades soil minerals for tree sugars in a mutualism called a mycorrhiza.",
+      "seasonality": ["August to November"],
+      "safeFacts": [
+        "Toxic and psychoactive — never eat any wild mushroom identified only from an app or photo."
+      ],
+      "region": "Northern hemisphere"
+    },
+    {
+      "slug": "turkey-tail",
+      "commonName": "Turkey tail",
+      "scientificName": "Trametes versicolor",
+      "category": "fungus",
+      "traits": ["shelf-like brackets", "concentric colour bands", "dead wood"],
+      "habitat": "Rotting stumps and logs, often in tiers.",
+      "ecology": "A white-rot fungus that secretes enzymes to break down wood, releasing nutrients back into the soil. The banded patterns are why it is called 'turkey tail'.",
+      "seasonality": ["visible year-round"],
+      "safeFacts": ["Never eat wild fungi identified from an app; turkey tail lookalikes exist."],
+      "region": "Worldwide"
+    },
+    {
+      "slug": "crustose-lichen",
+      "commonName": "Crustose lichen",
+      "scientificName": null,
+      "category": "texture",
+      "traits": ["crusty patches on stone", "grey-green-yellow", "flat to the rock"],
+      "habitat": "Walls, tombstones, rocks and old trees.",
+      "ecology": "A lichen is not one organism but a partnership of fungus and alga. Crustose lichens grow so slowly they can be decades old — some Arctic ones are thousands of years old.",
+      "seasonality": ["visible year-round", "grows fastest in damp weather"],
+      "safeFacts": ["Lichens are sensitive to pollution — lush lichen usually means cleaner air."],
+      "region": "Worldwide"
+    },
+    {
+      "slug": "dawn-chorus",
+      "commonName": "Dawn chorus",
+      "scientificName": null,
+      "category": "sound",
+      "traits": ["layered birdsong", "first light", "spring", "overlapping calls"],
+      "habitat": "Anywhere with trees, hedges and birds — strongest near woodland edge.",
+      "ecology": "At dawn the air is still and dim, so low-frequency song travels well. Robins and blackbirds start earliest, then a rolling sequence as each species joins in.",
+      "seasonality": ["March to June, peaking May"],
+      "safeFacts": [
+        "Best heard by simply standing still — recording playback can disturb nesting birds."
+      ],
+      "region": "Temperate regions"
+    },
+    {
+      "slug": "mackerel-sky",
+      "commonName": "Mackerel sky",
+      "scientificName": "Cirrocumulus / altocumulus",
+      "category": "weather",
+      "traits": ["rippled rows of small clouds", "high altitude", "fish-scale pattern"],
+      "habitat": "High in the sky, often ahead of a change in weather.",
+      "ecology": "Rows of small rounded clouds form where moist air ripples in stable layers. Sailors read them as a sign the weather is about to turn within a day.",
+      "seasonality": ["any season", "common at weather fronts"],
+      "safeFacts": [],
+      "region": "Worldwide"
+    },
+    {
+      "slug": "limestone",
+      "commonName": "Limestone",
+      "scientificName": null,
+      "category": "rock",
+      "traits": ["pale grey-cream", "layered", "sometimes fossil-rich", "fizzes with acid"],
+      "habitat": "Cliffs, quarries, dry valleys and karst landscapes.",
+      "ecology": "Most limestone is the compressed remains of sea creatures — a rock made of biology. Fossils of shells and corals are often visible with the naked eye.",
+      "seasonality": ["visible year-round"],
+      "safeFacts": [
+        "Old quarries and cliff edges are unstable — keep back from faces and loose blocks."
+      ],
+      "region": "Worldwide"
+    },
+    {
+      "slug": "roe-deer",
+      "commonName": "Roe deer",
+      "scientificName": "Capreolus capreolus",
+      "category": "animal",
+      "traits": ["small deer", "short antlers (male)", "white rump patch", "bark-stripped trees"],
+      "habitat": "Woodland edges, farmland and scrub — often at dawn and dusk.",
+      "ecology": "Roe deer delay implanting the embryo so young are born when food is best. When alarmed they bark, a surprisingly harsh sound for a delicate-looking animal.",
+      "seasonality": ["leaves strip trees in winter", "young in late spring"],
+      "safeFacts": [
+        "Give them space; a cornered deer can be dangerous, and does will defend hidden fawns."
+      ],
+      "region": "Europe and Asia"
+    },
+    {
+      "slug": "grey-squirrel",
+      "commonName": "Eastern grey squirrel",
+      "scientificName": "Sciurus carolinensis",
+      "category": "animal",
+      "traits": ["grey fur", "bushy tail", "caches food", "acrobatic feeder raids"],
+      "habitat": "Woodland and parks; introduced and now widespread.",
+      "ecology": "Grey squirrels scatter-hoard thousands of nuts each autumn, remembering the locations better than almost any other small mammal. Forgotten caches plant trees.",
+      "seasonality": ["active year-round", "busiest autumn caching"],
+      "safeFacts": ["Do not hand-feed — bites are serious and processed human food harms them."],
+      "region": "Introduced: Britain and Ireland, Italy"
+    },
+    {
+      "slug": "hedgehog",
+      "commonName": "European hedgehog",
+      "scientificName": "Erinaceus europaeus",
+      "category": "animal",
+      "traits": ["spines", "rolls into a ball", "nocturnal rustling", "snuffling snout"],
+      "habitat": "Gardens, hedgerows and parks with plenty of cover.",
+      "ecology": "Hedgehogs can travel a mile a night hunting beetles and slugs. They hibernate through winter, sometimes waking during mild spells to feed.",
+      "seasonality": ["hibernates November to March", "young in early summer"],
+      "safeFacts": [
+        "A hedgehog out in daylight often needs help — contact a wildlife rescue and offer shallow water, not milk."
+      ],
+      "region": "Europe"
+    }
+  ]
+}

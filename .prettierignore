@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+build
+public
+coverage
+playwright-report
+test-results
+workers/temporal
+services/prediction
+ai/tinker/scripts
+pnpm-lock.yaml
+*.md

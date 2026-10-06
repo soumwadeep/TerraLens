@@ -1,0 +1,82 @@
+{
+  "name": "terralens",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TerraLens — AI that sends you outside. An offline-first multimodal AI nature exploration companion.",
+  "license": "MIT",
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "temporal:worker": "pnpm --dir workers/temporal start",
+    "temporal:worker:dev": "pnpm --dir workers/temporal dev",
+    "prediction:serve": "python3 services/prediction/serve.py",
+    "prediction:train": "python3 services/prediction/train.py",
+    "tinker:evaluate": "tsx ai/tinker/scripts/evaluate.ts",
+    "tinker:prepare": "tsx ai/tinker/scripts/prepare-dataset.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^3.0.63",
+    "@mastra/core": "^1.74.0",
+    "@sentry/nextjs": "^11.4.0",
+    "@temporalio/client": "^1.24.0",
+    "ai": "^7.0.128",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "idb": "^8.0.3",
+    "jose": "^6.2.12",
+    "lucide-react": "^1.52.0",
+    "mongodb": "^7.7.0",
+    "motion": "^14.0.0",
+    "next": "^15.5.27",
+    "next-themes": "^0.4.6",
+    "pg": "^8.23.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@playwright/test": "^1.63.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "autoprefixer": "^10.6.1",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^15.5.27",
+    "jsdom": "^30.1.2",
+    "postcss": "^8.5.29",
+    "prettier": "^3.9.9",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^3.4.19",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "unrs-resolver",
+      "@sentry/cli"
+    ]
+  }
+}

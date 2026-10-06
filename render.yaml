@@ -1,0 +1,204 @@
+# =============================================================================
+# TerraLens on Render — Blueprint
+# =============================================================================
+# Two services:
+#   1. terralens                  — the Next.js web app (offline-first PWA).
+#   2. terralens-temporal-worker  — durable workflows (Mastra field agent recap).
+#
+# Everything is optional. With no env vars set, the web app still boots and
+# works as a fully local companion; each integration turns on only when its
+# configuration is present, and readiness is decided by live health checks
+# (see /lab/models), never by the existence of a variable.
+#
+# Secrets are marked `sync: false`: set them once in the Render dashboard,
+# never in this file.
+# =============================================================================
+
+envVarGroups:
+  - name: terralens-temporal
+    envVars:
+      # Temporal Cloud (or a self-hosted cluster reachable from Render).
+      - key: TEMPORAL_ADDRESS
+        sync: false
+      - key: TEMPORAL_NAMESPACE
+        value: default
+      - key: TEMPORAL_TASK_QUEUE
+        value: terralens-expeditions
+      - key: TEMPORAL_API_KEY
+        sync: false
+      - key: TEMPORAL_TLS
+        value: "1"
+
+services:
+  # ---------------------------------------------------------------------------
+  # Web app — Next.js 15 (App Router), pnpm.
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: terralens
+    runtime: node
+    plan: starter
+    region: oregon
+    branch: main
+    autoDeploy: true
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      # Public base URL of this deployment (share links, worker callbacks).
+      # Set to the Render URL of this service, e.g. https://terralens.onrender.com
+      - key: NEXT_PUBLIC_APP_URL
+        sync: false
+      # Machine-to-machine calls from the Temporal worker into /api/field-agent.
+      - key: FIELD_AGENT_ENABLED
+        value: "1"
+
+      # --- Gemma (open-weight inference, OpenAI-compatible API) ---------------
+      - key: GEMMA_BASE_URL
+        sync: false
+      - key: GEMMA_MODEL
+        value: gemma3:4b
+      - key: GEMMA_API_KEY
+        sync: false
+      - key: GEMMA_TIMEOUT_MS
+        value: "45000"
+
+      # --- MongoDB Atlas (expedition storage + cloud sync) --------------------
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: terralens
+
+      # --- Tiger Data (Postgres + pgvector knowledge retrieval) ---------------
+      - key: TIGER_DATABASE_URL
+        sync: false
+
+      # --- ElevenLabs (voice, proxied server-side via /api/voice) -------------
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        value: JBFqnCBsd6RMkjVDRZzb
+      - key: ELEVENLABS_MODEL
+        value: eleven_multilingual_v2
+
+      # --- TabPFN prediction service (services/prediction) --------------------
+      # `fromService` resolves to the bare host; the app normalizes it to
+      # https (src/lib/config/index.ts). Key must match the prediction
+      # service's PREDICTION_SERVICE_KEY.
+      - key: PREDICTION_SERVICE_URL
+        fromService:
+          type: web
+          name: terralens-prediction
+          property: host
+      - key: PREDICTION_SERVICE_KEY
+        sync: false
+
+      # --- Backboard (long-term memory) ---------------------------------------
+      - key: BACKBOARD_API_URL
+        sync: false
+      - key: BACKBOARD_API_KEY
+        sync: false
+
+      # --- SerpApi (ONLINE CONTEXT enrichment only) ---------------------------
+      - key: SERPAPI_API_KEY
+        sync: false
+
+      # --- Sentry (tracing; observation content + coordinates redacted) -------
+      - key: NEXT_PUBLIC_SENTRY_DSN
+        sync: false
+      - key: SENTRY_ORG
+        sync: false
+      - key: SENTRY_PROJECT
+        sync: false
+      - key: SENTRY_AUTH_TOKEN
+        sync: false
+
+      # --- Auth (guest/local mode needs none of this) --------------------------
+      - key: AUTH_SECRET
+        generateValue: true
+      - key: AUTH_SESSION_DAYS
+        value: "30"
+
+      # --- Feature flags (0 force-disables an integration) ---------------------
+      - key: ENABLE_SERVER_AI
+        value: "1"
+      - key: ENABLE_ELEVENLABS
+        value: "1"
+      - key: ENABLE_TABPFN
+        value: "1"
+      - key: ENABLE_BACKBOARD
+        value: "1"
+      - key: ENABLE_SERPAPI
+        value: "1"
+      - key: ENABLE_TIGER
+        value: "1"
+      - key: ENABLE_TEMPORAL
+        value: "1"
+      - key: ENABLE_MONGODB
+        value: "1"
+
+      - fromGroup: terralens-temporal
+
+  # ---------------------------------------------------------------------------
+  # Prediction service — TabPFN boundary (services/prediction).
+  # ---------------------------------------------------------------------------
+  # Boots even with no trained artifact: /health then reports trained=false
+  # and the app shows no forecast rather than an invented one. Real
+  # predictions require an artifact at TABPFN_MODEL_PATH — train it with
+  # `python train.py --data <your-export>.csv` (see services/prediction/README.md).
+  #
+  # Note: torch makes this service heavy (starter plan may be tight). The
+  # rest of the product never depends on it being reachable.
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: terralens-prediction
+    runtime: python
+    plan: starter
+    region: oregon
+    branch: main
+    autoDeploy: true
+    rootDir: services/prediction
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn serve:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: PREDICTION_SERVICE_KEY
+        sync: false
+      - key: TABPFN_MODEL_PATH
+        value: artifacts/activity_predictor.joblib
+
+  # ---------------------------------------------------------------------------
+  # Temporal worker — durable expedition workflows.
+  # ---------------------------------------------------------------------------
+  # The worker holds no model keys and no business logic: its activities call
+  # the web app's /api/field-agent route, so the honesty rules live in exactly
+  # one place. It connects out to Temporal Cloud; Render terminates nothing.
+  #
+  # When TEMPORAL_ADDRESS is empty the worker exits with a clear message and
+  # the app simply runs without durable workflows (the local sync queue covers
+  # expedition durability).
+  # ---------------------------------------------------------------------------
+  - type: worker
+    name: terralens-temporal-worker
+    runtime: node
+    plan: starter
+    region: oregon
+    branch: main
+    autoDeploy: true
+    rootDir: workers/temporal
+    buildCommand: corepack enable && pnpm install --frozen-lockfile
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.14.0
+      # Where the worker reaches the web app. `fromService` resolves to the
+      # bare host; the worker normalizes it to https://<host>.
+      - key: APP_URL
+        fromService:
+          type: web
+          name: terralens
+          property: host
+      - fromGroup: terralens-temporal

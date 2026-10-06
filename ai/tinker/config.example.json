@@ -1,0 +1,21 @@
+{
+  "$comment": "EXAMPLE ONLY — a suggested shape for a Tinker fine-tuning run, to copy into YOUR training script or notebook. No TerraLens script reads this file, and nothing here is transmitted anywhere. Training happens on Tinker's own platform with your account; see ai/tinker/README.md.",
+  "base_model": "meta-llama/Llama-3.2-3B-Instruct",
+  "adapter_name": "terralens-curiosity",
+  "method": "lora",
+  "lora": {
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]
+  },
+  "training": {
+    "dataset": "ai/tinker/data/train.jsonl",
+    "dataset_format": "chat",
+    "epochs": 3,
+    "batch_size": 4,
+    "learning_rate": 0.0001,
+    "max_sequence_length": 2048
+  },
+  "note": "After the run, serve the checkpoint behind an OpenAI-compatible endpoint and evaluate honestly with: TINKER_EVAL_BASE_URL=... TINKER_EVAL_MODEL=... pnpm tinker:evaluate"
+}

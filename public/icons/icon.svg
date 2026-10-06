@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="TerraLens: a leaf against sunlight on a deep forest ground">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F6C4D"/>
+      <stop offset="1" stop-color="#16382B"/>
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="376" cy="136" r="153" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F3BD3F" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#F3BD3F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="-204.8" x2="0" y2="204.8" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4F6E8"/>
+      <stop offset="1" stop-color="#BFD9A0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#bg)"/>
+  <circle cx="376" cy="136" r="153" fill="url(#sun-glow)"/>
+  <circle cx="376" cy="136" r="59" fill="#F3BD3F"/>
+  <g transform="translate(256 256) rotate(-34.377)">
+    <path d="M 0 -204.8 Q 169 0 0 204.8 Q -169 0 0 -204.8 Z" fill="url(#leaf)"/>
+    <path d="M 0 -170 L 0 170" stroke="#2A5A42" stroke-width="11" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

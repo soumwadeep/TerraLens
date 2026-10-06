@@ -1,0 +1,10 @@
+# TerraLens prediction service — TabPFN boundary.
+# Heavy by design: tabpfn pulls torch. The web app never depends on this
+# being reachable — when the service is missing, predictions say so.
+fastapi>=0.115
+uvicorn[standard]>=0.30
+tabpfn>=2.0
+scikit-learn>=1.4
+joblib>=1.4
+numpy>=1.26
+pandas>=2.2
