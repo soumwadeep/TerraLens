@@ -16,8 +16,9 @@ export default defineConfig({
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: process.env.CI ? [["github"], ["list"]] : [["list"]],
-  timeout: 90_000,
+  reporter: process.env.CI ? [["github"], ["list"], ["html", { open: "never" }]] : [["list"]],
+  // Generous ceiling: the loop test cold-compiles routes on a slow CI runner.
+  timeout: 120_000,
   expect: { timeout: 15_000 },
   use: {
     baseURL: `http://127.0.0.1:${PORT}`,

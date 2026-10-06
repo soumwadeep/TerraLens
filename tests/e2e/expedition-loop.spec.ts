@@ -42,7 +42,9 @@ test("a first-run user can walk the whole loop", async ({ page }) => {
   await page.waitForURL(/\/expeditions\/[0-9a-f-]+$/);
 
   // Work the first mission: activate, attach evidence, complete.
-  await page.getByRole("button", { name: "Start this mission" }).click();
+  // Exactly one mission is AVAILABLE at start, but never assume the count:
+  // the board is seeded per expedition id and adaptation can add follow-ups.
+  await page.getByRole("button", { name: "Start this mission" }).first().click();
   await page.getByRole("button", { name: "Capture evidence" }).click();
   await page.getByRole("tab", { name: "Note" }).click();
   await page
@@ -55,8 +57,9 @@ test("a first-run user can walk the whole loop", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /What you found/ })).toContainText("(1)");
 
   await page.getByRole("button", { name: "Mark done" }).click();
-  // Completing a mission unlocks the next one on the board.
-  await expect(page.getByRole("button", { name: "Start this mission" })).toBeVisible();
+  // Completing a mission keeps the board actionable: either the next one
+  // unlocks, or an adaptation added a follow-up while this one was active.
+  await expect(page.getByRole("button", { name: "Start this mission" }).first()).toBeVisible();
 
   // Wrap up → the deterministic score.
   await page.getByRole("button", { name: "Wrap up" }).click();
